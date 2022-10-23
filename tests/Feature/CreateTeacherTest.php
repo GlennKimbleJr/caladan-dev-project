@@ -42,7 +42,9 @@ class CreateTeacherTest extends TestCase
             'last_name' => 'Bob',
             'school' => 'Main High School',
             'grades' => [9,10,11,12],
-        ]))->assertRedirect(route('main.index'));
+        ]))
+            ->assertRedirect(route('main.index'))
+            ->assertSessionHas('message', 'The teacher was succesfully added.');
 
         $teacher = Teacher::first();
         $this->assertEquals('Joe', $teacher->first_name);

@@ -36,6 +36,8 @@ class MainController extends Controller
             'grades' => json_encode($request->get('grades')),
         ]);
 
+        $request->session()->flash('message', 'The teacher was succesfully added.');
+
         return redirect()->to(route('main.index'));
     }
 }
