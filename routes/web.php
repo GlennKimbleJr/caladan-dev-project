@@ -16,3 +16,4 @@ use App\Http\Controllers\MainController;
 
 // There may be a bug here :)
 Route::get('/', [MainController::class, 'index'])->name('main.index');
+Route::get('/teachers/create', [MainController::class, 'create'])->name('teachers.create');

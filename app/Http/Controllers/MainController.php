@@ -21,4 +21,9 @@ class MainController extends Controller
             'teachers' => $teachers
         ]);
     }
+
+    public function create()
+    {
+        
+    }
 }
