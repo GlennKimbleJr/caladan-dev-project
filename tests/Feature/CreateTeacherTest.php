@@ -35,7 +35,6 @@ class CreateTeacherTest extends TestCase
     /** @test */
     public function a_teacher_can_be_created()
     {
-        $this->withoutExceptionHandling();
         $this->assertEquals(0, Teacher::count());
 
         $this->post(route('teachers.store'), $this->validParameters([
@@ -50,5 +49,101 @@ class CreateTeacherTest extends TestCase
         $this->assertEquals('Bob', $teacher->last_name);
         $this->assertEquals('Main High School', $teacher->school);
         $this->assertEquals('[9,10,11,12]', $teacher->grades);
+    }
+
+    /** @test */
+    public function first_name_is_required()
+    {
+        $this->assertEquals(0, Teacher::count());
+
+        $this->post(route('teachers.store'), $this->validParameters([
+            'first_name' => null,
+        ]))->assertInvalid(['first_name' => 'required']);
+
+        $this->assertEquals(0, Teacher::count());
+    }
+
+    /** @test */
+    public function first_name_must_be_a_string()
+    {
+        $this->assertEquals(0, Teacher::count());
+
+        $this->post(route('teachers.store'), $this->validParameters([
+            'first_name' => 0,
+        ]))->assertInvalid(['first_name' => 'string']);
+
+        $this->assertEquals(0, Teacher::count());
+    }
+
+    /** @test */
+    public function last_name_is_required()
+    {
+        $this->assertEquals(0, Teacher::count());
+
+        $this->post(route('teachers.store'), $this->validParameters([
+            'last_name' => null,
+        ]))->assertInvalid(['last_name' => 'required']);
+
+        $this->assertEquals(0, Teacher::count());
+    }
+
+    /** @test */
+    public function last_name_must_be_a_string()
+    {
+        $this->assertEquals(0, Teacher::count());
+
+        $this->post(route('teachers.store'), $this->validParameters([
+            'last_name' => 0,
+        ]))->assertInvalid(['last_name' => 'string']);
+
+        $this->assertEquals(0, Teacher::count());
+    }
+
+    /** @test */
+    public function school_is_required()
+    {
+        $this->assertEquals(0, Teacher::count());
+
+        $this->post(route('teachers.store'), $this->validParameters([
+            'school' => null,
+        ]))->assertInvalid(['school' => 'required']);
+
+        $this->assertEquals(0, Teacher::count());
+    }
+
+    /** @test */
+    public function school_must_be_a_string()
+    {
+        $this->assertEquals(0, Teacher::count());
+
+        $this->post(route('teachers.store'), $this->validParameters([
+            'school' => 0,
+        ]))->assertInvalid(['school' => 'string']);
+
+        $this->assertEquals(0, Teacher::count());
+    }
+
+    /** @test */
+    public function grades_is_required()
+    {
+        $this->assertEquals(0, Teacher::count());
+
+        $this->post(route('teachers.store'), $this->validParameters([
+            'grades' => null,
+        ]))->assertInvalid(['grades' => 'required']);
+
+        $this->assertEquals(0, Teacher::count());
+    }
+
+    /** @test */
+    public function grades_must_be_an_array()
+    {
+        $this->assertEquals(0, Teacher::count());
+
+        $this->post(route('teachers.store'), $this->validParameters([
+            'grades' => 'not an array',
+        ]))->assertInvalid(['grades' => 'array']);
+
+        $this->assertEquals(0, Teacher::count());
     }
 }
