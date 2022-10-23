@@ -1,7 +1,7 @@
 <template>
   <div>
   	<div id="main">
-  		<button>Add Teacher</button>
+  		<Link :href="create_teacher_url" method="get" as="button" type="button">Add Teacher</Link>
 	  	<table>
 	  		<thead>
 	  			<tr>
@@ -25,12 +25,21 @@
 </template>
 
 <script>
+import { Link } from '@inertiajs/inertia-vue'
+
 export default {
+	components: {
+		'Link': Link,
+	},
 	props: {
+		create_teacher_url: {
+			required: true,
+			type: String
+		},
 		teachers: {
-	      required: true,
-	      type: Array
-	    },
+			required: true,
+			type: Array
+		},
 	},
 };
 </script>

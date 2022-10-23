@@ -13,7 +13,14 @@ class CreateTeacherTest extends TestCase
     /** @test */
     public function the_page_loads()
     {
-        $this->get(route('teachers.create'))->assertStatus(200);
+        $this->get(route('teachers.create'))
+            ->assertStatus(200)
+            ->assertInertia(function ($page) {
+                $page
+                    ->component('teachers/create')
+                    ->has('teacher_index_url')
+                    ->has('save_teacher_url');
+            });
     }
 
     /**

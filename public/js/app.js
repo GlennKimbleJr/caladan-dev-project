@@ -2982,6 +2982,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
 //
 //
 //
@@ -3008,11 +3009,140 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    'Link': _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.Link
+  },
   props: {
+    create_teacher_url: {
+      required: true,
+      type: String
+    },
     teachers: {
       required: true,
       type: Array
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/teachers/create.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/teachers/create.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    'Link': _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.Link,
+    'Inertia': _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia
+  },
+  props: {
+    errors: Object,
+    teacher_index_url: {
+      required: true,
+      type: String
+    },
+    save_teacher_url: {
+      required: true,
+      type: String
+    }
+  },
+  data: function data() {
+    return {
+      form: {
+        first_name: null,
+        last_name: null,
+        school: null,
+        grades: []
+      }
+    };
+  },
+  methods: {
+    submit: function submit() {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.post(this.save_teacher_url, this.form);
     }
   }
 });
@@ -25535,6 +25665,45 @@ component.options.__file = "resources/js/pages/index.vue"
 
 /***/ }),
 
+/***/ "./resources/js/pages/teachers/create.vue":
+/*!************************************************!*\
+  !*** ./resources/js/pages/teachers/create.vue ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _create_vue_vue_type_template_id_3cc64ebe___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./create.vue?vue&type=template&id=3cc64ebe& */ "./resources/js/pages/teachers/create.vue?vue&type=template&id=3cc64ebe&");
+/* harmony import */ var _create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./create.vue?vue&type=script&lang=js& */ "./resources/js/pages/teachers/create.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _create_vue_vue_type_template_id_3cc64ebe___WEBPACK_IMPORTED_MODULE_0__.render,
+  _create_vue_vue_type_template_id_3cc64ebe___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/teachers/create.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/pages/index.vue?vue&type=script&lang=js&":
 /*!***************************************************************!*\
   !*** ./resources/js/pages/index.vue?vue&type=script&lang=js& ***!
@@ -25551,6 +25720,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/teachers/create.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/pages/teachers/create.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./create.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/teachers/create.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/pages/index.vue?vue&type=template&id=0b5dcf8e&":
 /*!*********************************************************************!*\
   !*** ./resources/js/pages/index.vue?vue&type=template&id=0b5dcf8e& ***!
@@ -25564,6 +25749,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_0b5dcf8e___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_0b5dcf8e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=template&id=0b5dcf8e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/index.vue?vue&type=template&id=0b5dcf8e&");
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/teachers/create.vue?vue&type=template&id=3cc64ebe&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/pages/teachers/create.vue?vue&type=template&id=3cc64ebe& ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_create_vue_vue_type_template_id_3cc64ebe___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_create_vue_vue_type_template_id_3cc64ebe___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_create_vue_vue_type_template_id_3cc64ebe___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./create.vue?vue&type=template&id=3cc64ebe& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/teachers/create.vue?vue&type=template&id=3cc64ebe&");
 
 
 /***/ }),
@@ -25585,29 +25787,45 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { attrs: { id: "main" } }, [
-      _c("button", [_vm._v("Add Teacher")]),
-      _vm._v(" "),
-      _c("table", [
-        _vm._m(0),
-        _vm._v(" "),
+    _c(
+      "div",
+      { attrs: { id: "main" } },
+      [
         _c(
-          "tbody",
-          _vm._l(_vm.teachers, function(teacher) {
-            return _c("tr", [
-              _c("td", [_vm._v(_vm._s(teacher.id))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(teacher.full_name))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(teacher.school))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(teacher.grades.join(", ")))])
-            ])
-          }),
-          0
-        )
-      ])
-    ])
+          "Link",
+          {
+            attrs: {
+              href: _vm.create_teacher_url,
+              method: "get",
+              as: "button",
+              type: "button"
+            }
+          },
+          [_vm._v("Add Teacher")]
+        ),
+        _vm._v(" "),
+        _c("table", [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "tbody",
+            _vm._l(_vm.teachers, function(teacher) {
+              return _c("tr", [
+                _c("td", [_vm._v(_vm._s(teacher.id))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(teacher.full_name))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(teacher.school))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(teacher.grades.join(", ")))])
+              ])
+            }),
+            0
+          )
+        ])
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = [
@@ -25628,6 +25846,527 @@ var staticRenderFns = [
     ])
   }
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/teachers/create.vue?vue&type=template&id=3cc64ebe&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/teachers/create.vue?vue&type=template&id=3cc64ebe& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      { attrs: { id: "main" } },
+      [
+        _c("h1", [_vm._v("Add Teacher")]),
+        _vm._v(" "),
+        _c(
+          "form",
+          {
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.submit.apply(null, arguments)
+              }
+            }
+          },
+          [
+            _c("div", [
+              _c("label", { attrs: { for: "first_name" } }, [
+                _vm._v("First name:")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.first_name,
+                    expression: "form.first_name"
+                  }
+                ],
+                attrs: { id: "first_name" },
+                domProps: { value: _vm.form.first_name },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "first_name", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _vm.errors.first_name
+                ? _c("div", [_vm._v(_vm._s(_vm.errors.first_name))])
+                : _vm._e()
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c("label", { attrs: { for: "last_name" } }, [
+                _vm._v("Last name:")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.last_name,
+                    expression: "form.last_name"
+                  }
+                ],
+                attrs: { id: "last_name" },
+                domProps: { value: _vm.form.last_name },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "last_name", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _vm.errors.last_name
+                ? _c("div", [_vm._v(_vm._s(_vm.errors.last_name))])
+                : _vm._e()
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c("label", { attrs: { for: "school" } }, [_vm._v("School:")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.school,
+                    expression: "form.school"
+                  }
+                ],
+                attrs: { id: "school" },
+                domProps: { value: _vm.form.school },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "school", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _vm.errors.school
+                ? _c("div", [_vm._v(_vm._s(_vm.errors.school))])
+                : _vm._e()
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c("label", { attrs: { for: "grades" } }, [_vm._v("Grades:")]),
+              _vm._v(" "),
+              _c("div", [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.grades,
+                      expression: "form.grades"
+                    }
+                  ],
+                  attrs: { type: "checkbox", id: "1st", value: "1st" },
+                  domProps: {
+                    checked: Array.isArray(_vm.form.grades)
+                      ? _vm._i(_vm.form.grades, "1st") > -1
+                      : _vm.form.grades
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.form.grades,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "1st",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(_vm.form, "grades", $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.form,
+                              "grades",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.form, "grades", $$c)
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "1st" } }, [_vm._v("1st")])
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.grades,
+                      expression: "form.grades"
+                    }
+                  ],
+                  attrs: { type: "checkbox", id: "2nd", value: "2nd" },
+                  domProps: {
+                    checked: Array.isArray(_vm.form.grades)
+                      ? _vm._i(_vm.form.grades, "2nd") > -1
+                      : _vm.form.grades
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.form.grades,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "2nd",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(_vm.form, "grades", $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.form,
+                              "grades",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.form, "grades", $$c)
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "2nd" } }, [_vm._v("2nd")])
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.grades,
+                      expression: "form.grades"
+                    }
+                  ],
+                  attrs: { type: "checkbox", id: "3rd", value: "3rd" },
+                  domProps: {
+                    checked: Array.isArray(_vm.form.grades)
+                      ? _vm._i(_vm.form.grades, "3rd") > -1
+                      : _vm.form.grades
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.form.grades,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "3rd",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(_vm.form, "grades", $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.form,
+                              "grades",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.form, "grades", $$c)
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "3rd" } }, [_vm._v("3rd")])
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.grades,
+                      expression: "form.grades"
+                    }
+                  ],
+                  attrs: { type: "checkbox", id: "4th", value: "4th" },
+                  domProps: {
+                    checked: Array.isArray(_vm.form.grades)
+                      ? _vm._i(_vm.form.grades, "4th") > -1
+                      : _vm.form.grades
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.form.grades,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "4th",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(_vm.form, "grades", $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.form,
+                              "grades",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.form, "grades", $$c)
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "4th" } }, [_vm._v("4th")])
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.grades,
+                      expression: "form.grades"
+                    }
+                  ],
+                  attrs: { type: "checkbox", id: "5th", value: "5th" },
+                  domProps: {
+                    checked: Array.isArray(_vm.form.grades)
+                      ? _vm._i(_vm.form.grades, "5th") > -1
+                      : _vm.form.grades
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.form.grades,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "5th",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(_vm.form, "grades", $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.form,
+                              "grades",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.form, "grades", $$c)
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "5th" } }, [_vm._v("5th")])
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.grades,
+                      expression: "form.grades"
+                    }
+                  ],
+                  attrs: { type: "checkbox", id: "6th", value: "6th" },
+                  domProps: {
+                    checked: Array.isArray(_vm.form.grades)
+                      ? _vm._i(_vm.form.grades, "6th") > -1
+                      : _vm.form.grades
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.form.grades,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "6th",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(_vm.form, "grades", $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.form,
+                              "grades",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.form, "grades", $$c)
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "6th" } }, [_vm._v("6th")])
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.grades,
+                      expression: "form.grades"
+                    }
+                  ],
+                  attrs: { type: "checkbox", id: "7th", value: "7th" },
+                  domProps: {
+                    checked: Array.isArray(_vm.form.grades)
+                      ? _vm._i(_vm.form.grades, "7th") > -1
+                      : _vm.form.grades
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.form.grades,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "7th",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(_vm.form, "grades", $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.form,
+                              "grades",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.form, "grades", $$c)
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "7th" } }, [_vm._v("7th")])
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.grades,
+                      expression: "form.grades"
+                    }
+                  ],
+                  attrs: { type: "checkbox", id: "8th", value: "8th" },
+                  domProps: {
+                    checked: Array.isArray(_vm.form.grades)
+                      ? _vm._i(_vm.form.grades, "8th") > -1
+                      : _vm.form.grades
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.form.grades,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "8th",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(_vm.form, "grades", $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.form,
+                              "grades",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.form, "grades", $$c)
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "8th" } }, [_vm._v("8th")])
+              ]),
+              _vm._v(" "),
+              _vm.errors.grades
+                ? _c("div", [_vm._v(_vm._s(_vm.errors.grades))])
+                : _vm._e()
+            ]),
+            _vm._v(" "),
+            _c("button", { attrs: { type: "submit" } }, [_vm._v("Submit")])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "Link",
+          {
+            attrs: {
+              href: _vm.teacher_index_url,
+              method: "get",
+              as: "button",
+              type: "button"
+            }
+          },
+          [_vm._v("Go Back")]
+        )
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -37800,7 +38539,9 @@ Vue.compile = compileToFunctions;
 var map = {
 	"./": "./resources/js/pages/index.vue",
 	"./index": "./resources/js/pages/index.vue",
-	"./index.vue": "./resources/js/pages/index.vue"
+	"./index.vue": "./resources/js/pages/index.vue",
+	"./teachers/create": "./resources/js/pages/teachers/create.vue",
+	"./teachers/create.vue": "./resources/js/pages/teachers/create.vue"
 };
 
 
@@ -37832,7 +38573,8 @@ webpackContext.id = "./resources/js/pages sync recursive ^\\.\\/.*$";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
-	"./pages/index.vue": "./resources/js/pages/index.vue"
+	"./pages/index.vue": "./resources/js/pages/index.vue",
+	"./pages/teachers/create.vue": "./resources/js/pages/teachers/create.vue"
 };
 
 

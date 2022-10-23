@@ -18,13 +18,17 @@ class MainController extends Controller
         }
 
         return Inertia::render('index', [
-            'teachers' => $teachers
+            'teachers' => $teachers,
+            'create_teacher_url' => route('teachers.create'),
         ]);
     }
 
     public function create()
     {
-
+        return Inertia::render('teachers/create', [
+            'teacher_index_url' => route('main.index'),
+            'save_teacher_url' => route('teachers.store'),
+        ]);
     }
 
     public function store(CreateTeacherRequest $request)
