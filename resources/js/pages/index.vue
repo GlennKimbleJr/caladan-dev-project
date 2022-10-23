@@ -32,9 +32,5 @@ export default {
 	      type: Array
 	    },
 	},
-
-	mounted() {
-		console.log('This does nothing, you should remove it :)');
-	}
 };
 </script>

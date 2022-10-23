@@ -3014,9 +3014,6 @@ __webpack_require__.r(__webpack_exports__);
       required: true,
       type: Array
     }
-  },
-  mounted: function mounted() {
-    console.log('This does nothing, you should remove it :)');
   }
 });
 
@@ -25604,7 +25601,7 @@ var render = function() {
               _vm._v(" "),
               _c("td", [_vm._v(_vm._s(teacher.school))]),
               _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(teacher.grades.join(",")))])
+              _c("td", [_vm._v(_vm._s(teacher.grades.join(", ")))])
             ])
           }),
           0
