@@ -3009,6 +3009,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -3022,6 +3026,10 @@ __webpack_require__.r(__webpack_exports__);
     teachers: {
       required: true,
       type: Array
+    },
+    flash_message: {
+      required: false,
+      type: String
     }
   }
 });
@@ -25787,6 +25795,12 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _vm.flash_message
+      ? _c("div", { staticClass: "alert" }, [
+          _vm._v("\n      " + _vm._s(_vm.flash_message) + "\n    ")
+        ])
+      : _vm._e(),
+    _vm._v(" "),
     _c(
       "div",
       { attrs: { id: "main" } },

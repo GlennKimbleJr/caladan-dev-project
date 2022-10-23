@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div v-if="flash_message" class="alert">
+      {{ flash_message }}
+    </div>
   	<div id="main">
   		<Link :href="create_teacher_url" method="get" as="button" type="button">Add Teacher</Link>
 	  	<table>
@@ -26,6 +29,7 @@
 
 <script>
 import { Link } from '@inertiajs/inertia-vue'
+import { usePage } from '@inertiajs/inertia-vue'
 
 export default {
 	components: {
@@ -40,6 +44,10 @@ export default {
 			required: true,
 			type: Array
 		},
-	},
+		flash_message: {
+			required: false,
+			type: String
+		},
+	}
 };
 </script>

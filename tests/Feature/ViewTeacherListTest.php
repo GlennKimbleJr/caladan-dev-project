@@ -17,7 +17,8 @@ class ViewTeacherListTest extends TestCase
             ->assertInertia(function ($page) {
                 $page
                     ->component('index')
-                    ->has('create_teacher_url');
+                    ->has('create_teacher_url')
+                    ->has('flash_message');
             });
     }
 }

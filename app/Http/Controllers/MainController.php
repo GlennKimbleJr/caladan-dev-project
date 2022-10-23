@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Inertia\Inertia;
 use App\Models\Teacher;
+use Illuminate\Http\Request;
 use App\Http\Requests\CreateTeacherRequest;
 
 class MainController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $teachers = Teacher::get();
         // There are a better ways to do this... :)
@@ -20,6 +21,7 @@ class MainController extends Controller
         return Inertia::render('index', [
             'teachers' => $teachers,
             'create_teacher_url' => route('teachers.create'),
+            'flash_message' => $request->session()->get('message'),
         ]);
     }
 
