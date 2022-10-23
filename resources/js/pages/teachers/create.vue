@@ -23,39 +23,31 @@
 	  			<div>
 						<input type="checkbox" id="1st" value="1st" v-model="form.grades">
 						<label for="1st">1st</label>
-	  			</div>
-	  			
-	  			<div>
-						<input type="checkbox" id="2nd" value="2nd" v-model="form.grades">
-						<label for="2nd">2nd</label>
-	  			</div>
-	  			
-	  			<div>
-						<input type="checkbox" id="3rd" value="3rd" v-model="form.grades">
-						<label for="3rd">3rd</label>
-	  			</div>
-	  			
-	  			<div>
-						<input type="checkbox" id="4th" value="4th" v-model="form.grades">
-						<label for="4th">4th</label>
-	  			</div>
-	  			
-	  			<div>
+
 						<input type="checkbox" id="5th" value="5th" v-model="form.grades">
 						<label for="5th">5th</label>
 	  			</div>
 	  			
 	  			<div>
+						<input type="checkbox" id="2nd" value="2nd" v-model="form.grades">
+						<label for="2nd">2nd</label>
+
 						<input type="checkbox" id="6th" value="6th" v-model="form.grades">
 						<label for="6th">6th</label>
 	  			</div>
 	  			
 	  			<div>
+						<input type="checkbox" id="3rd" value="3rd" v-model="form.grades">
+						<label for="3rd">3rd</label>
+
 						<input type="checkbox" id="7th" value="7th" v-model="form.grades">
 						<label for="7th">7th</label>
 	  			</div>
 	  			
 	  			<div>
+						<input type="checkbox" id="4th" value="4th" v-model="form.grades">
+						<label for="4th">4th</label>
+
 						<input type="checkbox" id="8th" value="8th" v-model="form.grades">
 						<label for="8th">8th</label>
 	  			</div>

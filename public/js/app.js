@@ -3112,14 +3112,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -26036,145 +26028,8 @@ var render = function() {
                   }
                 }),
                 _vm._v(" "),
-                _c("label", { attrs: { for: "1st" } }, [_vm._v("1st")])
-              ]),
-              _vm._v(" "),
-              _c("div", [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.form.grades,
-                      expression: "form.grades"
-                    }
-                  ],
-                  attrs: { type: "checkbox", id: "2nd", value: "2nd" },
-                  domProps: {
-                    checked: Array.isArray(_vm.form.grades)
-                      ? _vm._i(_vm.form.grades, "2nd") > -1
-                      : _vm.form.grades
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.form.grades,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "2nd",
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 &&
-                            _vm.$set(_vm.form, "grades", $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            _vm.$set(
-                              _vm.form,
-                              "grades",
-                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                            )
-                        }
-                      } else {
-                        _vm.$set(_vm.form, "grades", $$c)
-                      }
-                    }
-                  }
-                }),
+                _c("label", { attrs: { for: "1st" } }, [_vm._v("1st")]),
                 _vm._v(" "),
-                _c("label", { attrs: { for: "2nd" } }, [_vm._v("2nd")])
-              ]),
-              _vm._v(" "),
-              _c("div", [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.form.grades,
-                      expression: "form.grades"
-                    }
-                  ],
-                  attrs: { type: "checkbox", id: "3rd", value: "3rd" },
-                  domProps: {
-                    checked: Array.isArray(_vm.form.grades)
-                      ? _vm._i(_vm.form.grades, "3rd") > -1
-                      : _vm.form.grades
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.form.grades,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "3rd",
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 &&
-                            _vm.$set(_vm.form, "grades", $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            _vm.$set(
-                              _vm.form,
-                              "grades",
-                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                            )
-                        }
-                      } else {
-                        _vm.$set(_vm.form, "grades", $$c)
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("label", { attrs: { for: "3rd" } }, [_vm._v("3rd")])
-              ]),
-              _vm._v(" "),
-              _c("div", [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.form.grades,
-                      expression: "form.grades"
-                    }
-                  ],
-                  attrs: { type: "checkbox", id: "4th", value: "4th" },
-                  domProps: {
-                    checked: Array.isArray(_vm.form.grades)
-                      ? _vm._i(_vm.form.grades, "4th") > -1
-                      : _vm.form.grades
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.form.grades,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "4th",
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 &&
-                            _vm.$set(_vm.form, "grades", $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            _vm.$set(
-                              _vm.form,
-                              "grades",
-                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                            )
-                        }
-                      } else {
-                        _vm.$set(_vm.form, "grades", $$c)
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("label", { attrs: { for: "4th" } }, [_vm._v("4th")])
-              ]),
-              _vm._v(" "),
-              _c("div", [
                 _c("input", {
                   directives: [
                     {
@@ -26229,6 +26084,49 @@ var render = function() {
                       expression: "form.grades"
                     }
                   ],
+                  attrs: { type: "checkbox", id: "2nd", value: "2nd" },
+                  domProps: {
+                    checked: Array.isArray(_vm.form.grades)
+                      ? _vm._i(_vm.form.grades, "2nd") > -1
+                      : _vm.form.grades
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.form.grades,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "2nd",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(_vm.form, "grades", $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.form,
+                              "grades",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.form, "grades", $$c)
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "2nd" } }, [_vm._v("2nd")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.grades,
+                      expression: "form.grades"
+                    }
+                  ],
                   attrs: { type: "checkbox", id: "6th", value: "6th" },
                   domProps: {
                     checked: Array.isArray(_vm.form.grades)
@@ -26274,6 +26172,49 @@ var render = function() {
                       expression: "form.grades"
                     }
                   ],
+                  attrs: { type: "checkbox", id: "3rd", value: "3rd" },
+                  domProps: {
+                    checked: Array.isArray(_vm.form.grades)
+                      ? _vm._i(_vm.form.grades, "3rd") > -1
+                      : _vm.form.grades
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.form.grades,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "3rd",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(_vm.form, "grades", $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.form,
+                              "grades",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.form, "grades", $$c)
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "3rd" } }, [_vm._v("3rd")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.grades,
+                      expression: "form.grades"
+                    }
+                  ],
                   attrs: { type: "checkbox", id: "7th", value: "7th" },
                   domProps: {
                     checked: Array.isArray(_vm.form.grades)
@@ -26310,6 +26251,49 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.grades,
+                      expression: "form.grades"
+                    }
+                  ],
+                  attrs: { type: "checkbox", id: "4th", value: "4th" },
+                  domProps: {
+                    checked: Array.isArray(_vm.form.grades)
+                      ? _vm._i(_vm.form.grades, "4th") > -1
+                      : _vm.form.grades
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.form.grades,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "4th",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(_vm.form, "grades", $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.form,
+                              "grades",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.form, "grades", $$c)
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "4th" } }, [_vm._v("4th")]),
+                _vm._v(" "),
                 _c("input", {
                   directives: [
                     {
