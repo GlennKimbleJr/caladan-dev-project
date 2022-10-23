@@ -15,4 +15,4 @@ use App\Http\Controllers\MainController;
 */
 
 // There may be a bug here :)
-Route::get('/', [MainController::class, '{missing}'])->name('main.index');
+Route::get('/', [MainController::class, 'index'])->name('main.index');
