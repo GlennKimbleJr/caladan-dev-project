@@ -12,6 +12,7 @@
 	  				<th>Teacher</th>
 	  				<th>School</th>
 	  				<th>Grade(s)</th>
+	  				<th>Subject(s)</th>
 	  			</tr>
 	  		</thead>
 	  		<tbody>
@@ -20,6 +21,7 @@
 			  		<td>{{ teacher.full_name }}</td>
 			  		<td>{{ teacher.school }}</td>		  		
 			  		<td>{{ teacher.grades.join(', ') }}</td>	
+			  		<td>{{ teacher.subjects.join(', ') }}</td>	
 			  	</tr>
 			</tbody>
 	  	</table>

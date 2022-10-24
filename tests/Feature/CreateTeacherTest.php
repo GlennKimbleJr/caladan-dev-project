@@ -36,6 +36,7 @@ class CreateTeacherTest extends TestCase
             'last_name' => 'Bob',
             'school' => 'Main High School',
             'grades' => [9,10,11,12],
+            'subjects' => ['English', 'Math', 'Science', 'History'],
         ], $override);
     }
 
@@ -49,6 +50,7 @@ class CreateTeacherTest extends TestCase
             'last_name' => 'Bob',
             'school' => 'Main High School',
             'grades' => [9,10,11,12],
+            'subjects' => ['English', 'Math', 'Science', 'History'],
         ]))
             ->assertRedirect(route('main.index'))
             ->assertSessionHas('message', 'The teacher was succesfully added.');
@@ -58,6 +60,7 @@ class CreateTeacherTest extends TestCase
         $this->assertEquals('Bob', $teacher->last_name);
         $this->assertEquals('Main High School', $teacher->school);
         $this->assertEquals('[9,10,11,12]', $teacher->grades);
+        $this->assertEquals('["English","Math","Science","History"]', $teacher->subjects);
     }
 
     /** @test */
@@ -152,6 +155,30 @@ class CreateTeacherTest extends TestCase
         $this->post(route('teachers.store'), $this->validParameters([
             'grades' => 'not an array',
         ]))->assertInvalid(['grades' => 'array']);
+
+        $this->assertEquals(0, Teacher::count());
+    }
+
+    /** @test */
+    public function subjects_is_required()
+    {
+        $this->assertEquals(0, Teacher::count());
+
+        $this->post(route('teachers.store'), $this->validParameters([
+            'subjects' => null,
+        ]))->assertInvalid(['subjects' => 'required']);
+
+        $this->assertEquals(0, Teacher::count());
+    }
+
+    /** @test */
+    public function subjects_must_be_an_array()
+    {
+        $this->assertEquals(0, Teacher::count());
+
+        $this->post(route('teachers.store'), $this->validParameters([
+            'subjects' => 'not an array',
+        ]))->assertInvalid(['subjects' => 'array']);
 
         $this->assertEquals(0, Teacher::count());
     }

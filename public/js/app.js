@@ -3012,6 +3012,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3112,6 +3114,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3136,7 +3158,8 @@ __webpack_require__.r(__webpack_exports__);
         first_name: null,
         last_name: null,
         school: null,
-        grades: []
+        grades: [],
+        subjects: []
       }
     };
   },
@@ -25823,7 +25846,9 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(teacher.school))]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(teacher.grades.join(", ")))])
+                _c("td", [_vm._v(_vm._s(teacher.grades.join(", ")))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(teacher.subjects.join(", ")))])
               ])
             }),
             0
@@ -25847,7 +25872,9 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("School")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Grade(s)")])
+        _c("th", [_vm._v("Grade(s)")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Subject(s)")])
       ])
     ])
   }
@@ -26340,6 +26367,190 @@ var render = function() {
               _vm._v(" "),
               _vm.errors.grades
                 ? _c("div", [_vm._v(_vm._s(_vm.errors.grades))])
+                : _vm._e()
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c("label", { attrs: { for: "grades" } }, [_vm._v("Subjects:")]),
+              _vm._v(" "),
+              _c("div", [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.subjects,
+                      expression: "form.subjects"
+                    }
+                  ],
+                  attrs: { type: "checkbox", id: "Math", value: "Math" },
+                  domProps: {
+                    checked: Array.isArray(_vm.form.subjects)
+                      ? _vm._i(_vm.form.subjects, "Math") > -1
+                      : _vm.form.subjects
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.form.subjects,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "Math",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(_vm.form, "subjects", $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.form,
+                              "subjects",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.form, "subjects", $$c)
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "Math" } }, [_vm._v("Math")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.subjects,
+                      expression: "form.subjects"
+                    }
+                  ],
+                  attrs: { type: "checkbox", id: "History", value: "History" },
+                  domProps: {
+                    checked: Array.isArray(_vm.form.subjects)
+                      ? _vm._i(_vm.form.subjects, "History") > -1
+                      : _vm.form.subjects
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.form.subjects,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "History",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(_vm.form, "subjects", $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.form,
+                              "subjects",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.form, "subjects", $$c)
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "History" } }, [_vm._v("History")])
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.subjects,
+                      expression: "form.subjects"
+                    }
+                  ],
+                  attrs: { type: "checkbox", id: "Science", value: "Science" },
+                  domProps: {
+                    checked: Array.isArray(_vm.form.subjects)
+                      ? _vm._i(_vm.form.subjects, "Science") > -1
+                      : _vm.form.subjects
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.form.subjects,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "Science",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(_vm.form, "subjects", $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.form,
+                              "subjects",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.form, "subjects", $$c)
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "Science" } }, [_vm._v("Science")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.subjects,
+                      expression: "form.subjects"
+                    }
+                  ],
+                  attrs: { type: "checkbox", id: "English", value: "English" },
+                  domProps: {
+                    checked: Array.isArray(_vm.form.subjects)
+                      ? _vm._i(_vm.form.subjects, "English") > -1
+                      : _vm.form.subjects
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.form.subjects,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "English",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(_vm.form, "subjects", $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.form,
+                              "subjects",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.form, "subjects", $$c)
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "English" } }, [_vm._v("English")])
+              ]),
+              _vm._v(" "),
+              _vm.errors.subjects
+                ? _c("div", [_vm._v(_vm._s(_vm.errors.subjects))])
                 : _vm._e()
             ]),
             _vm._v(" "),

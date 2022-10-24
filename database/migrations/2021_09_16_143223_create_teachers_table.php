@@ -19,6 +19,7 @@ class CreateTeachersTable extends Migration
             $table->string('last_name');
             $table->string('school');
             $table->string('grades')->nullable();
+            $table->string('subjects')->nullable();
             $table->timestamps();
         });
     }

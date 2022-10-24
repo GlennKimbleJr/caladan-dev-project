@@ -54,6 +54,26 @@
 
 					<div v-if="errors.grades">{{ errors.grades }}</div>
 		  	</div>
+		  	<div>
+		  		<label for="grades">Subjects:</label>
+	  			<div>
+						<input type="checkbox" id="Math" value="Math" v-model="form.subjects">
+						<label for="Math">Math</label>
+
+						<input type="checkbox" id="History" value="History" v-model="form.subjects">
+						<label for="History">History</label>
+	  			</div>
+	  			
+	  			<div>
+						<input type="checkbox" id="Science" value="Science" v-model="form.subjects">
+						<label for="Science">Science</label>
+
+						<input type="checkbox" id="English" value="English" v-model="form.subjects">
+						<label for="English">English</label>
+	  			</div>
+
+					<div v-if="errors.subjects">{{ errors.subjects }}</div>
+		  	</div>
 		    <button type="submit">Submit</button>
 		  </form>
   		<Link :href="teacher_index_url" method="get" as="button" type="button">Go Back</Link>
@@ -88,6 +108,7 @@ export default {
         last_name: null,
         school: null,
         grades: [],
+        subjects: [],
       },
     }
   },

@@ -16,6 +16,7 @@ class MainController extends Controller
         foreach ($teachers as $teacher) {
             $teacher->full_name = $teacher->first_name . ' ' . $teacher->last_name;
             $teacher->grades = json_decode($teacher->grades, true);
+            $teacher->subjects = json_decode($teacher->subjects, true);
         }
 
         return Inertia::render('index', [
@@ -40,6 +41,7 @@ class MainController extends Controller
             'last_name' => $request->get('last_name'),
             'school' => $request->get('school'),
             'grades' => json_encode($request->get('grades')),
+            'subjects' => json_encode($request->get('subjects')),
         ]);
 
         $request->session()->flash('message', 'The teacher was succesfully added.');
