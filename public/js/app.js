@@ -3016,6 +3016,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3035,6 +3040,11 @@ __webpack_require__.r(__webpack_exports__);
       required: false,
       type: String
     }
+  },
+  methods: {
+    closeFlashMessage: function closeFlashMessage() {
+      this.flash_message = null;
+    }
   }
 });
 
@@ -3053,6 +3063,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -25821,19 +25869,63 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm.flash_message
-      ? _c("div", { staticClass: "alert" }, [
-          _vm._v("\n      " + _vm._s(_vm.flash_message) + "\n    ")
-        ])
-      : _vm._e(),
-    _vm._v(" "),
     _c(
       "div",
       { attrs: { id: "main" } },
       [
+        _vm.flash_message
+          ? _c(
+              "div",
+              {
+                staticClass:
+                  "bg-green-100 border border-green-400 text-green-700 px-4 py-3 mb-4 rounded relative",
+                attrs: { role: "alert" }
+              },
+              [
+                _c("span", { staticClass: "block sm:inline" }, [
+                  _vm._v(_vm._s(_vm.flash_message))
+                ]),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  { staticClass: "absolute top-0 bottom-0 right-0 px-4 py-3" },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "fill-current h-6 w-6 text-green-500",
+                        attrs: {
+                          role: "button",
+                          xmlns: "http://www.w3.org/2000/svg",
+                          viewBox: "0 0 20 20"
+                        },
+                        on: {
+                          click: function($event) {
+                            return _vm.closeFlashMessage()
+                          }
+                        }
+                      },
+                      [
+                        _c("title", [_vm._v("Close")]),
+                        _c("path", {
+                          attrs: {
+                            d:
+                              "M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"
+                          }
+                        })
+                      ]
+                    )
+                  ]
+                )
+              ]
+            )
+          : _vm._e(),
+        _vm._v(" "),
         _c(
           "Link",
           {
+            staticClass:
+              "bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 mb-4 rounded float-right",
             attrs: {
               href: _vm.create_teacher_url,
               method: "get",
@@ -25844,18 +25936,18 @@ var render = function() {
           [_vm._v("Add Teacher")]
         ),
         _vm._v(" "),
-        _c("table", [
+        _c("table", { staticClass: "min-w-full text-center table-auto" }, [
           _vm._m(0),
           _vm._v(" "),
           _c(
             "tbody",
             _vm._l(_vm.teachers, function(teacher) {
-              return _c("tr", [
+              return _c("tr", { staticClass: "hover:bg-slate-200" }, [
                 _c("td", [_vm._v(_vm._s(teacher.id))]),
                 _vm._v(" "),
                 _c("td", [
                   _c("img", {
-                    staticClass: "avatar",
+                    staticClass: "max-w-[100px] mx-auto",
                     attrs: { src: teacher.profile_photo_path }
                   })
                 ]),
@@ -25882,19 +25974,31 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", [
+    return _c("thead", { staticClass: "sticky top-0 border-b bg-slate-200" }, [
       _c("tr", [
-        _c("th", [_vm._v("ID")]),
+        _c("th", { staticClass: "text-sm font-medium px-6 py-4" }, [
+          _vm._v("ID")
+        ]),
         _vm._v(" "),
-        _c("th", [_vm._v("Profile Photo")]),
+        _c("th", { staticClass: "text-sm font-medium px-6 py-4" }, [
+          _vm._v("Profile Photo")
+        ]),
         _vm._v(" "),
-        _c("th", [_vm._v("Teacher")]),
+        _c("th", { staticClass: "text-sm font-medium px-6 py-4" }, [
+          _vm._v("Teacher")
+        ]),
         _vm._v(" "),
-        _c("th", [_vm._v("School")]),
+        _c("th", { staticClass: "text-sm font-medium px-6 py-4" }, [
+          _vm._v("School")
+        ]),
         _vm._v(" "),
-        _c("th", [_vm._v("Grade(s)")]),
+        _c("th", { staticClass: "text-sm font-medium px-6 py-4" }, [
+          _vm._v("Grade(s)")
+        ]),
         _vm._v(" "),
-        _c("th", [_vm._v("Subject(s)")])
+        _c("th", { staticClass: "text-sm font-medium px-6 py-4" }, [
+          _vm._v("Subject(s)")
+        ])
       ])
     ])
   }
@@ -25922,27 +26026,33 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "div",
-      { attrs: { id: "main" } },
-      [
-        _c("h1", [_vm._v("Add Teacher")]),
-        _vm._v(" "),
-        _c(
-          "form",
-          {
-            on: {
-              submit: function($event) {
-                $event.preventDefault()
-                return _vm.submit.apply(null, arguments)
-              }
+    _c("div", { attrs: { id: "main" } }, [
+      _c(
+        "form",
+        {
+          staticClass: "w-full max-w-lg",
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+              return _vm.submit.apply(null, arguments)
             }
-          },
-          [
-            _c("div", [
-              _c("label", { attrs: { for: "first_name" } }, [
-                _vm._v("First name:")
-              ]),
+          }
+        },
+        [
+          _c("h1", { staticClass: "text-2xl font-bold border-b mb-6" }, [
+            _vm._v("Add Teacher")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex flex-wrap -mx-3 mb-6" }, [
+            _c("div", { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" }, [
+              _c(
+                "label",
+                {
+                  staticClass: "block text-gray-700 text-sm font-bold mb-2",
+                  attrs: { for: "first_name" }
+                },
+                [_vm._v("First name:")]
+              ),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -25953,6 +26063,8 @@ var render = function() {
                     expression: "form.first_name"
                   }
                 ],
+                staticClass:
+                  "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
                 attrs: { id: "first_name" },
                 domProps: { value: _vm.form.first_name },
                 on: {
@@ -25966,14 +26078,21 @@ var render = function() {
               }),
               _vm._v(" "),
               _vm.errors.first_name
-                ? _c("div", [_vm._v(_vm._s(_vm.errors.first_name))])
+                ? _c("div", { staticClass: "text-red-400" }, [
+                    _vm._v(_vm._s(_vm.errors.first_name))
+                  ])
                 : _vm._e()
             ]),
             _vm._v(" "),
-            _c("div", [
-              _c("label", { attrs: { for: "last_name" } }, [
-                _vm._v("Last name:")
-              ]),
+            _c("div", { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" }, [
+              _c(
+                "label",
+                {
+                  staticClass: "block text-gray-700 text-sm font-bold mb-2",
+                  attrs: { for: "last_name" }
+                },
+                [_vm._v("Last name:")]
+              ),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -25984,6 +26103,8 @@ var render = function() {
                     expression: "form.last_name"
                   }
                 ],
+                staticClass:
+                  "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
                 attrs: { id: "last_name" },
                 domProps: { value: _vm.form.last_name },
                 on: {
@@ -25997,43 +26118,65 @@ var render = function() {
               }),
               _vm._v(" "),
               _vm.errors.last_name
-                ? _c("div", [_vm._v(_vm._s(_vm.errors.last_name))])
+                ? _c("div", { staticClass: "text-red-400" }, [
+                    _vm._v(_vm._s(_vm.errors.last_name))
+                  ])
                 : _vm._e()
-            ]),
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "mb-6" }, [
+            _c(
+              "label",
+              {
+                staticClass: "block text-gray-700 text-sm font-bold mb-2",
+                attrs: { for: "school" }
+              },
+              [_vm._v("School:")]
+            ),
             _vm._v(" "),
-            _c("div", [
-              _c("label", { attrs: { for: "school" } }, [_vm._v("School:")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.form.school,
-                    expression: "form.school"
-                  }
-                ],
-                attrs: { id: "school" },
-                domProps: { value: _vm.form.school },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.form, "school", $event.target.value)
-                  }
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.school,
+                  expression: "form.school"
                 }
-              }),
-              _vm._v(" "),
-              _vm.errors.school
-                ? _c("div", [_vm._v(_vm._s(_vm.errors.school))])
-                : _vm._e()
-            ]),
+              ],
+              staticClass:
+                "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+              attrs: { id: "school" },
+              domProps: { value: _vm.form.school },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "school", $event.target.value)
+                }
+              }
+            }),
             _vm._v(" "),
-            _c("div", [
-              _c("label", { attrs: { for: "grades" } }, [_vm._v("Grades:")]),
-              _vm._v(" "),
-              _c("div", [
+            _vm.errors.school
+              ? _c("div", { staticClass: "text-red-400" }, [
+                  _vm._v(_vm._s(_vm.errors.school))
+                ])
+              : _vm._e()
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "mb-6" }, [
+            _c(
+              "label",
+              {
+                staticClass: "block text-gray-700 text-sm font-bold mb-2",
+                attrs: { for: "grades" }
+              },
+              [_vm._v("Grade(s):")]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "flex flex-wrap -mx-3 mb-6" }, [
+              _c("div", { staticClass: "w-full md:w-1/4 px-3 mb-6 md:mb-0" }, [
                 _c("input", {
                   directives: [
                     {
@@ -26075,8 +26218,147 @@ var render = function() {
                   }
                 }),
                 _vm._v(" "),
-                _c("label", { attrs: { for: "1st" } }, [_vm._v("1st")]),
+                _c("label", { attrs: { for: "1st" } }, [_vm._v("1st")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "w-full md:w-1/4 px-3 mb-6 md:mb-0" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.grades,
+                      expression: "form.grades"
+                    }
+                  ],
+                  attrs: { type: "checkbox", id: "2nd", value: "2nd" },
+                  domProps: {
+                    checked: Array.isArray(_vm.form.grades)
+                      ? _vm._i(_vm.form.grades, "2nd") > -1
+                      : _vm.form.grades
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.form.grades,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "2nd",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(_vm.form, "grades", $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.form,
+                              "grades",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.form, "grades", $$c)
+                      }
+                    }
+                  }
+                }),
                 _vm._v(" "),
+                _c("label", { attrs: { for: "2nd" } }, [_vm._v("2nd")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "w-full md:w-1/4 px-3 mb-6 md:mb-0" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.grades,
+                      expression: "form.grades"
+                    }
+                  ],
+                  attrs: { type: "checkbox", id: "3rd", value: "3rd" },
+                  domProps: {
+                    checked: Array.isArray(_vm.form.grades)
+                      ? _vm._i(_vm.form.grades, "3rd") > -1
+                      : _vm.form.grades
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.form.grades,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "3rd",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(_vm.form, "grades", $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.form,
+                              "grades",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.form, "grades", $$c)
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "3rd" } }, [_vm._v("3rd")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "w-full md:w-1/4 px-3 mb-6 md:mb-0" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.grades,
+                      expression: "form.grades"
+                    }
+                  ],
+                  attrs: { type: "checkbox", id: "4th", value: "4th" },
+                  domProps: {
+                    checked: Array.isArray(_vm.form.grades)
+                      ? _vm._i(_vm.form.grades, "4th") > -1
+                      : _vm.form.grades
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.form.grades,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "4th",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(_vm.form, "grades", $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.form,
+                              "grades",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.form, "grades", $$c)
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "4th" } }, [_vm._v("4th")])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "flex flex-wrap -mx-3 mb-6" }, [
+              _c("div", { staticClass: "w-full md:w-1/4 px-3 mb-6 md:mb-0" }, [
                 _c("input", {
                   directives: [
                     {
@@ -26121,50 +26403,7 @@ var render = function() {
                 _c("label", { attrs: { for: "5th" } }, [_vm._v("5th")])
               ]),
               _vm._v(" "),
-              _c("div", [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.form.grades,
-                      expression: "form.grades"
-                    }
-                  ],
-                  attrs: { type: "checkbox", id: "2nd", value: "2nd" },
-                  domProps: {
-                    checked: Array.isArray(_vm.form.grades)
-                      ? _vm._i(_vm.form.grades, "2nd") > -1
-                      : _vm.form.grades
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.form.grades,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "2nd",
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 &&
-                            _vm.$set(_vm.form, "grades", $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            _vm.$set(
-                              _vm.form,
-                              "grades",
-                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                            )
-                        }
-                      } else {
-                        _vm.$set(_vm.form, "grades", $$c)
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("label", { attrs: { for: "2nd" } }, [_vm._v("2nd")]),
-                _vm._v(" "),
+              _c("div", { staticClass: "w-full md:w-1/4 px-3 mb-6 md:mb-0" }, [
                 _c("input", {
                   directives: [
                     {
@@ -26209,50 +26448,7 @@ var render = function() {
                 _c("label", { attrs: { for: "6th" } }, [_vm._v("6th")])
               ]),
               _vm._v(" "),
-              _c("div", [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.form.grades,
-                      expression: "form.grades"
-                    }
-                  ],
-                  attrs: { type: "checkbox", id: "3rd", value: "3rd" },
-                  domProps: {
-                    checked: Array.isArray(_vm.form.grades)
-                      ? _vm._i(_vm.form.grades, "3rd") > -1
-                      : _vm.form.grades
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.form.grades,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "3rd",
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 &&
-                            _vm.$set(_vm.form, "grades", $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            _vm.$set(
-                              _vm.form,
-                              "grades",
-                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                            )
-                        }
-                      } else {
-                        _vm.$set(_vm.form, "grades", $$c)
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("label", { attrs: { for: "3rd" } }, [_vm._v("3rd")]),
-                _vm._v(" "),
+              _c("div", { staticClass: "w-full md:w-1/4 px-3 mb-6 md:mb-0" }, [
                 _c("input", {
                   directives: [
                     {
@@ -26297,50 +26493,7 @@ var render = function() {
                 _c("label", { attrs: { for: "7th" } }, [_vm._v("7th")])
               ]),
               _vm._v(" "),
-              _c("div", [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.form.grades,
-                      expression: "form.grades"
-                    }
-                  ],
-                  attrs: { type: "checkbox", id: "4th", value: "4th" },
-                  domProps: {
-                    checked: Array.isArray(_vm.form.grades)
-                      ? _vm._i(_vm.form.grades, "4th") > -1
-                      : _vm.form.grades
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.form.grades,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = "4th",
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 &&
-                            _vm.$set(_vm.form, "grades", $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            _vm.$set(
-                              _vm.form,
-                              "grades",
-                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                            )
-                        }
-                      } else {
-                        _vm.$set(_vm.form, "grades", $$c)
-                      }
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("label", { attrs: { for: "4th" } }, [_vm._v("4th")]),
-                _vm._v(" "),
+              _c("div", { staticClass: "w-full md:w-1/4 px-3 mb-6 md:mb-0" }, [
                 _c("input", {
                   directives: [
                     {
@@ -26383,17 +26536,28 @@ var render = function() {
                 }),
                 _vm._v(" "),
                 _c("label", { attrs: { for: "8th" } }, [_vm._v("8th")])
-              ]),
-              _vm._v(" "),
-              _vm.errors.grades
-                ? _c("div", [_vm._v(_vm._s(_vm.errors.grades))])
-                : _vm._e()
+              ])
             ]),
             _vm._v(" "),
-            _c("div", [
-              _c("label", { attrs: { for: "grades" } }, [_vm._v("Subjects:")]),
-              _vm._v(" "),
-              _c("div", [
+            _vm.errors.grades
+              ? _c("div", { staticClass: "-mt-4 text-red-400" }, [
+                  _vm._v(_vm._s(_vm.errors.grades))
+                ])
+              : _vm._e()
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "mb-6" }, [
+            _c(
+              "label",
+              {
+                staticClass: "block text-gray-700 text-sm font-bold mb-2",
+                attrs: { for: "grades" }
+              },
+              [_vm._v("Subject(s):")]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "flex flex-wrap -mx-3 mb-6" }, [
+              _c("div", { staticClass: "w-full md:w-1/4 px-3 mb-6 md:mb-0" }, [
                 _c("input", {
                   directives: [
                     {
@@ -26435,8 +26599,10 @@ var render = function() {
                   }
                 }),
                 _vm._v(" "),
-                _c("label", { attrs: { for: "Math" } }, [_vm._v("Math")]),
-                _vm._v(" "),
+                _c("label", { attrs: { for: "Math" } }, [_vm._v("Math")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "w-full md:w-1/4 px-3 mb-6 md:mb-0" }, [
                 _c("input", {
                   directives: [
                     {
@@ -26481,7 +26647,7 @@ var render = function() {
                 _c("label", { attrs: { for: "History" } }, [_vm._v("History")])
               ]),
               _vm._v(" "),
-              _c("div", [
+              _c("div", { staticClass: "w-full md:w-1/4 px-3 mb-6 md:mb-0" }, [
                 _c("input", {
                   directives: [
                     {
@@ -26523,8 +26689,10 @@ var render = function() {
                   }
                 }),
                 _vm._v(" "),
-                _c("label", { attrs: { for: "Science" } }, [_vm._v("Science")]),
-                _vm._v(" "),
+                _c("label", { attrs: { for: "Science" } }, [_vm._v("Science")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "w-full md:w-1/4 px-3 mb-6 md:mb-0" }, [
                 _c("input", {
                   directives: [
                     {
@@ -26567,71 +26735,107 @@ var render = function() {
                 }),
                 _vm._v(" "),
                 _c("label", { attrs: { for: "English" } }, [_vm._v("English")])
-              ]),
-              _vm._v(" "),
-              _vm.errors.subjects
-                ? _c("div", [_vm._v(_vm._s(_vm.errors.subjects))])
-                : _vm._e()
+              ])
             ]),
             _vm._v(" "),
-            _c("div", [
-              _c("label", { attrs: { for: "grades" } }, [
-                _vm._v("Upload Profile Photo:")
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                attrs: { type: "file" },
-                on: {
-                  input: function($event) {
-                    _vm.form.profile_photo = $event.target.files[0]
-                  }
+            _vm.errors.subjects
+              ? _c("div", { staticClass: "-mt-4 text-red-400" }, [
+                  _vm._v(_vm._s(_vm.errors.subjects))
+                ])
+              : _vm._e()
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "mb-6" }, [
+            _c(
+              "label",
+              {
+                staticClass: "block text-gray-700 text-sm font-bold mb-2",
+                attrs: { for: "grades" }
+              },
+              [_vm._v("Profile Photo:")]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              attrs: { type: "file" },
+              on: {
+                input: function($event) {
+                  _vm.form.profile_photo = $event.target.files[0]
                 }
-              }),
-              _vm._v(" "),
-              _vm.form.progress
-                ? _c(
-                    "progress",
-                    {
-                      attrs: { max: "100" },
-                      domProps: { value: _vm.form.progress.percentage }
-                    },
-                    [
-                      _vm._v(
-                        "\n\t\t\t      " +
-                          _vm._s(_vm.form.progress.percentage) +
-                          "%\n\t\t\t    "
-                      )
-                    ]
-                  )
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.errors.profile_photo
-                ? _c("div", [_vm._v(_vm._s(_vm.errors.profile_photo))])
-                : _vm._e()
-            ]),
+              }
+            }),
             _vm._v(" "),
-            _c("button", { attrs: { type: "submit" } }, [_vm._v("Submit")])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "Link",
-          {
-            attrs: {
-              href: _vm.teacher_index_url,
-              method: "get",
-              as: "button",
-              type: "button"
-            }
-          },
-          [_vm._v("Go Back")]
-        )
-      ],
-      1
-    )
+            _vm.form.progress
+              ? _c(
+                  "progress",
+                  {
+                    attrs: { max: "100" },
+                    domProps: { value: _vm.form.progress.percentage }
+                  },
+                  [
+                    _vm._v(
+                      "\n\t\t\t      " +
+                        _vm._s(_vm.form.progress.percentage) +
+                        "%\n\t\t\t    "
+                    )
+                  ]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.errors.profile_photo
+              ? _c("div", { staticClass: "text-red-400" }, [
+                  _vm._v(_vm._s(_vm.errors.profile_photo))
+                ])
+              : _vm._e()
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex flex-wrap -mx-3 mb-6" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0 text-right" },
+              [
+                _c(
+                  "Link",
+                  {
+                    staticClass:
+                      "bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded",
+                    attrs: {
+                      href: _vm.teacher_index_url,
+                      method: "get",
+                      as: "button",
+                      type: "button"
+                    }
+                  },
+                  [_vm._v("Cancel")]
+                )
+              ],
+              1
+            )
+          ])
+        ]
+      )
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" }, [
+      _c(
+        "button",
+        {
+          staticClass:
+            "bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded",
+          attrs: { type: "submit" }
+        },
+        [_vm._v("Submit")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
