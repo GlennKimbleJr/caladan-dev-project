@@ -11,16 +11,8 @@ class MainController extends Controller
 {
     public function index(Request $request)
     {
-        $teachers = Teacher::get();
-        // There are a better ways to do this... :)
-        foreach ($teachers as $teacher) {
-            $teacher->full_name = $teacher->first_name . ' ' . $teacher->last_name;
-            $teacher->grades = json_decode($teacher->grades, true);
-            $teacher->subjects = json_decode($teacher->subjects, true);
-        }
-
         return Inertia::render('index', [
-            'teachers' => $teachers,
+            'teachers' => Teacher::get(),
             'create_teacher_url' => route('teachers.create'),
             'flash_message' => $request->session()->get('message'),
         ]);
@@ -40,8 +32,8 @@ class MainController extends Controller
             'first_name' => $request->get('first_name'),
             'last_name' => $request->get('last_name'),
             'school' => $request->get('school'),
-            'grades' => json_encode($request->get('grades')),
-            'subjects' => json_encode($request->get('subjects')),
+            'grades' => $request->get('grades'),
+            'subjects' => $request->get('subjects'),
             'profile_photo_path' => $request->hasFile('profile_photo')
                 ? $request->file('profile_photo')->store('users', 'public')
                 : 'default.png',

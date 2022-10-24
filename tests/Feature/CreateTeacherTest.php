@@ -61,8 +61,8 @@ class CreateTeacherTest extends TestCase
         $this->assertEquals('Joe', $teacher->first_name);
         $this->assertEquals('Bob', $teacher->last_name);
         $this->assertEquals('Main High School', $teacher->school);
-        $this->assertEquals('[9,10,11,12]', $teacher->grades);
-        $this->assertEquals('["English","Math","Science","History"]', $teacher->subjects);
+        $this->assertEquals([9,10,11,12], $teacher->grades);
+        $this->assertEquals(['English','Math','Science','History'], $teacher->subjects);
     }
 
     /** @test */
