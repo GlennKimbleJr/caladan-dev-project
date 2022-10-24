@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Teacher;
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CreateTeacherRequest extends FormRequest
@@ -27,8 +29,8 @@ class CreateTeacherRequest extends FormRequest
             'first_name' => 'required|string',
             'last_name' => 'required|string',
             'school' => 'required|string',
-            'grades' => 'nullable|array',
-            'subjects' => 'nullable|array',
+            'grades' => ['nullable', 'array', Rule::in(Teacher::getAvailableGrades())],
+            'subjects' => ['nullable', 'array', Rule::in(Teacher::getAvailableSubjects())],
             'profile_photo' => 'nullable|file|image'
         ];
     }

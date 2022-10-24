@@ -37,8 +37,8 @@ class CreateTeacherTest extends TestCase
             'first_name' => 'Joe',
             'last_name' => 'Bob',
             'school' => 'Main High School',
-            'grades' => [9,10,11,12],
-            'subjects' => ['English', 'Math', 'Science', 'History'],
+            'grades' => Teacher::getAvailableGrades(),
+            'subjects' => Teacher::getAvailableSubjects(),
         ], $override);
     }
 
@@ -51,8 +51,8 @@ class CreateTeacherTest extends TestCase
             'first_name' => 'Joe',
             'last_name' => 'Bob',
             'school' => 'Main High School',
-            'grades' => [9,10,11,12],
-            'subjects' => ['English', 'Math', 'Science', 'History'],
+            'grades' => Teacher::getAvailableGrades(),
+            'subjects' => Teacher::getAvailableSubjects(),
         ]))
             ->assertRedirect(route('main.index'))
             ->assertSessionHas('message', 'The teacher was succesfully added.');
@@ -61,8 +61,8 @@ class CreateTeacherTest extends TestCase
         $this->assertEquals('Joe', $teacher->first_name);
         $this->assertEquals('Bob', $teacher->last_name);
         $this->assertEquals('Main High School', $teacher->school);
-        $this->assertEquals([9,10,11,12], $teacher->grades);
-        $this->assertEquals(['English','Math','Science','History'], $teacher->subjects);
+        $this->assertEquals(Teacher::getAvailableGrades(), $teacher->grades);
+        $this->assertEquals(Teacher::getAvailableSubjects(), $teacher->subjects);
     }
 
     /** @test */
@@ -162,6 +162,18 @@ class CreateTeacherTest extends TestCase
     }
 
     /** @test */
+    public function grade_input_is_restricted_to_certain_grades()
+    {
+        $this->post(route('teachers.store'), $this->validParameters([
+            'grades' => ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th'],
+        ]))->assertSessionHas('message', 'The teacher was succesfully added.');
+
+        $this->post(route('teachers.store'), $this->validParameters([
+            'grades' => ['9th'],
+        ]))->assertInvalid(['grades' => 'in']);
+    }
+
+    /** @test */
     public function subjects_are_optional()
     {
         $this->assertEquals(0, Teacher::count());
@@ -183,6 +195,18 @@ class CreateTeacherTest extends TestCase
         ]))->assertInvalid(['subjects' => 'array']);
 
         $this->assertEquals(0, Teacher::count());
+    }
+
+    /** @test */
+    public function subject_input_is_restricted_to_certain_subjects()
+    {
+        $this->post(route('teachers.store'), $this->validParameters([
+            'subjects' => ['English', 'Math', 'Science', 'History'],
+        ]))->assertSessionHas('message', 'The teacher was succesfully added.');
+
+        $this->post(route('teachers.store'), $this->validParameters([
+            'subjects' => ['Economics'],
+        ]))->assertInvalid(['subjects' => 'in']);
     }
 
     /** @test */
