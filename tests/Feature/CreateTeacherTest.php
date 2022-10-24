@@ -138,15 +138,15 @@ class CreateTeacherTest extends TestCase
     }
 
     /** @test */
-    public function grades_is_required()
+    public function grades_are_optional()
     {
         $this->assertEquals(0, Teacher::count());
 
         $this->post(route('teachers.store'), $this->validParameters([
             'grades' => null,
-        ]))->assertInvalid(['grades' => 'required']);
+        ]));
 
-        $this->assertEquals(0, Teacher::count());
+        $this->assertEquals(1, Teacher::count());
     }
 
     /** @test */
@@ -162,15 +162,15 @@ class CreateTeacherTest extends TestCase
     }
 
     /** @test */
-    public function subjects_is_required()
+    public function subjects_are_optional()
     {
         $this->assertEquals(0, Teacher::count());
 
         $this->post(route('teachers.store'), $this->validParameters([
             'subjects' => null,
-        ]))->assertInvalid(['subjects' => 'required']);
+        ]));
 
-        $this->assertEquals(0, Teacher::count());
+        $this->assertEquals(1, Teacher::count());
     }
 
     /** @test */

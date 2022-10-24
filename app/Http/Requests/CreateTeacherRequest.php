@@ -27,8 +27,8 @@ class CreateTeacherRequest extends FormRequest
             'first_name' => 'required|string',
             'last_name' => 'required|string',
             'school' => 'required|string',
-            'grades' => 'required|array',
-            'subjects' => 'required|array',
+            'grades' => 'nullable|array',
+            'subjects' => 'nullable|array',
             'profile_photo' => 'nullable|file|image'
         ];
     }
