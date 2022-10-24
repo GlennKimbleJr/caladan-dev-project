@@ -3,8 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\Teacher;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TeacherFactory extends Factory
 {
@@ -26,7 +26,9 @@ class TeacherFactory extends Factory
             'first_name' => $this->faker->firstName(),
             'last_name' => $this->faker->lastName(),
             'school' => $this->faker->company,
-            'grades' => json_encode($this->faker->randomElements(['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th'], 2))
+            'grades' => $this->faker->randomElements(Teacher::getAvailableGrades(), 2),
+            'subjects' => $this->faker->randomElements(Teacher::getAvailableSubjects(), 2),
+            'profile_photo_path' => 'default.png',
         ];
     }
 }

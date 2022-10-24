@@ -1,31 +1,3 @@
-body {
-	background-color: #eeeeee;
-}
-
-#main {
-	margin: 0 auto;
-	margin-top: 20px;
-	width: 60%;
-}
-
-button {
-	float: right;
-	margin-bottom: 5px;
-	background-color: green;
-	color: #ffffff;
-}
-
-table {	
-	background-color: #ffffff;
-	border: 1px solid #dddddd;	
-	width: 100%;
-}
-
-table th {
-	background-color: #dddddd;
-	padding: 4px;
-}
-
-table td {
-	padding: 4px;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
