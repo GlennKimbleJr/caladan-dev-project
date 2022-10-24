@@ -3014,6 +3014,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3134,6 +3136,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3159,7 +3169,8 @@ __webpack_require__.r(__webpack_exports__);
         last_name: null,
         school: null,
         grades: [],
-        subjects: []
+        subjects: [],
+        profile_photo: null
       }
     };
   },
@@ -25842,6 +25853,13 @@ var render = function() {
               return _c("tr", [
                 _c("td", [_vm._v(_vm._s(teacher.id))]),
                 _vm._v(" "),
+                _c("td", [
+                  _c("img", {
+                    staticClass: "avatar",
+                    attrs: { src: teacher.profile_photo_path }
+                  })
+                ]),
+                _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(teacher.full_name))]),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(teacher.school))]),
@@ -25867,6 +25885,8 @@ var staticRenderFns = [
     return _c("thead", [
       _c("tr", [
         _c("th", [_vm._v("ID")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Profile Photo")]),
         _vm._v(" "),
         _c("th", [_vm._v("Teacher")]),
         _vm._v(" "),
@@ -26551,6 +26571,42 @@ var render = function() {
               _vm._v(" "),
               _vm.errors.subjects
                 ? _c("div", [_vm._v(_vm._s(_vm.errors.subjects))])
+                : _vm._e()
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c("label", { attrs: { for: "grades" } }, [
+                _vm._v("Upload Profile Photo:")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                attrs: { type: "file" },
+                on: {
+                  input: function($event) {
+                    _vm.form.profile_photo = $event.target.files[0]
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _vm.form.progress
+                ? _c(
+                    "progress",
+                    {
+                      attrs: { max: "100" },
+                      domProps: { value: _vm.form.progress.percentage }
+                    },
+                    [
+                      _vm._v(
+                        "\n\t\t\t      " +
+                          _vm._s(_vm.form.progress.percentage) +
+                          "%\n\t\t\t    "
+                      )
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.errors.profile_photo
+                ? _c("div", [_vm._v(_vm._s(_vm.errors.profile_photo))])
                 : _vm._e()
             ]),
             _vm._v(" "),

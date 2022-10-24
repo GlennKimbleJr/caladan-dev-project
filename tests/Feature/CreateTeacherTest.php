@@ -4,6 +4,8 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use App\Models\Teacher;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CreateTeacherTest extends TestCase
@@ -179,6 +181,60 @@ class CreateTeacherTest extends TestCase
         $this->post(route('teachers.store'), $this->validParameters([
             'subjects' => 'not an array',
         ]))->assertInvalid(['subjects' => 'array']);
+
+        $this->assertEquals(0, Teacher::count());
+    }
+
+    /** @test */
+    public function a_profile_photo_is_not_required()
+    {
+        $this->assertEquals(0, Teacher::count());
+
+        $this->post(route('teachers.store'), $this->validParameters([
+            'profile_photo' => null
+        ]))
+            ->assertRedirect(route('main.index'))
+            ->assertSessionHas('message', 'The teacher was succesfully added.');
+
+        $this->assertEquals('default.png', Teacher::first()->profile_photo_path);
+    }
+
+    /** @test */
+    public function a_profile_photo_can_be_uploaded()
+    {
+        Storage::fake();
+
+        $this->assertEquals(0, Teacher::count());
+
+        $this->post(route('teachers.store'), $this->validParameters([
+            'profile_photo' => UploadedFile::fake()->image('photo1.jpg'),
+        ]))
+            ->assertRedirect(route('main.index'))
+            ->assertSessionHas('message', 'The teacher was succesfully added.');
+
+        Storage::disk('public')->assertExists(Teacher::first()->profile_photo_path);
+    }
+
+    /** @test */
+    public function a_profile_photo_must_be_an_uploaded_file()
+    {
+        $this->assertEquals(0, Teacher::count());
+
+        $this->post(route('teachers.store'), $this->validParameters([
+            'profile_photo' => 'not a photo',
+        ]))->assertInvalid(['profile_photo' => 'file']);
+
+        $this->assertEquals(0, Teacher::count());
+    }
+
+    /** @test */
+    public function a_profile_photo_must_be_an_image()
+    {
+        $this->assertEquals(0, Teacher::count());
+
+        $this->post(route('teachers.store'), $this->validParameters([
+            'profile_photo' => UploadedFile::fake()->image('document.pdf'),
+        ]))->assertInvalid(['profile_photo' => 'image']);
 
         $this->assertEquals(0, Teacher::count());
     }

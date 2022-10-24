@@ -9,6 +9,7 @@
 	  		<thead>
 	  			<tr>
 	  				<th>ID</th>
+	  				<th>Profile Photo</th>
 	  				<th>Teacher</th>
 	  				<th>School</th>
 	  				<th>Grade(s)</th>
@@ -18,6 +19,7 @@
 	  		<tbody>
 			  	<tr v-for="teacher in teachers">
 			  		<td>{{ teacher.id }}</td>
+			  		<td><img :src="teacher.profile_photo_path" class="avatar"></td>
 			  		<td>{{ teacher.full_name }}</td>
 			  		<td>{{ teacher.school }}</td>		  		
 			  		<td>{{ teacher.grades.join(', ') }}</td>	

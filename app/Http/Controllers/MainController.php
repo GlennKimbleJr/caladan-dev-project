@@ -42,6 +42,9 @@ class MainController extends Controller
             'school' => $request->get('school'),
             'grades' => json_encode($request->get('grades')),
             'subjects' => json_encode($request->get('subjects')),
+            'profile_photo_path' => $request->hasFile('profile_photo')
+                ? $request->file('profile_photo')->store('users', 'public')
+                : 'default.png',
         ]);
 
         $request->session()->flash('message', 'The teacher was succesfully added.');

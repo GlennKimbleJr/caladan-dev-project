@@ -28,6 +28,7 @@ class TeacherFactory extends Factory
             'school' => $this->faker->company,
             'grades' => json_encode($this->faker->randomElements(['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th'], 2)),
             'subjects' => json_encode($this->faker->randomElements(['English', 'Math', 'Science', 'History'], 2)),
+            'profile_photo_path' => 'default.png',
         ];
     }
 }

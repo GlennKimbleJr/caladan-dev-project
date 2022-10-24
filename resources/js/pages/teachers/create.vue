@@ -74,6 +74,14 @@
 
 					<div v-if="errors.subjects">{{ errors.subjects }}</div>
 		  	</div>
+		  	<div>
+		  		<label for="grades">Upload Profile Photo:</label>
+			    <input type="file" @input="form.profile_photo = $event.target.files[0]" />
+			    <progress v-if="form.progress" :value="form.progress.percentage" max="100">
+			      {{ form.progress.percentage }}%
+			    </progress>
+			    <div v-if="errors.profile_photo">{{ errors.profile_photo }}</div>
+		  	</div>
 		    <button type="submit">Submit</button>
 		  </form>
   		<Link :href="teacher_index_url" method="get" as="button" type="button">Go Back</Link>
@@ -109,6 +117,7 @@ export default {
         school: null,
         grades: [],
         subjects: [],
+        profile_photo: null,
       },
     }
   },
